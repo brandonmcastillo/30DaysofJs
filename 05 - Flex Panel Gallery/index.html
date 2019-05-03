@@ -77,7 +77,10 @@
             background-position: center;
             flex: 1;
             /*Each item evenly distributes space */
+            justify-content: center;
 
+            display: flex;
+            flex-direction: column;
         }
 
         .panel1 {
@@ -100,11 +103,31 @@
             background-image: url(https://source.unsplash.com/3MNzGlQM7qs/1500x1500);
         }
 
-        /* Flex Children */
+        /* Flex Children/items */
         .panel>* {
             margin: 0;
             width: 100%;
             transition: transform 0.5s;
+            flex: 1 0 auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .panel>*:first-child {
+            transform: translateY(-100%);
+        }
+
+        .panel.open-active>*:first-child {
+            transform: translateY(0);
+        }
+
+        .panel>*:last-child {
+            transform: translateY(100%);
+        }
+
+        .panel.open-active>*:last-child {
+            transform: translateY(0);
         }
 
         .panel p {
@@ -119,7 +142,14 @@
         }
 
         .panel.open {
+            flex: 5;
             font-size: 40px;
+        }
+
+        @media only screen and (max-width: 600px) {
+            .panel p {
+                font-size: 1em;
+            }
         }
     </style>
 
@@ -127,7 +157,20 @@
 
 
     <script>
+        const panels = document.querySelectorAll('.panel');
 
+        function open() {
+            this.classList.toggle('open');
+        }
+
+        function active(e) {
+            if (e.propertyName.includes('flex')) {
+                this.classList.toggle('open-active')
+            }
+        }
+
+        panels.forEach(panel => panel.addEventListener("click", open));
+        panels.forEach(panel => panel.addEventListener("transitionend", active));
     </script>
 
 
