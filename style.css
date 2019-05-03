@@ -1,6 +1,6 @@
 html {
     font-size: 10px;
-    background: url(http://i.imgur.com/b9r5sEL.jpg) bottom center;
+    background: url(https://pe56d.s3.amazonaws.com/o_1bes6gb731s5kln512qm1gh15lsm.jpg) bottom center;
     background-size: cover;
 }
 
@@ -25,7 +25,7 @@ html {
     margin: 1rem;
     font-size: 1.5rem;
     padding: 1rem .5rem;
-    transition: all .07s ease;
+    transition: all .05s;
     width: 10rem;
     text-align: center;
     color: white;
@@ -35,8 +35,8 @@ html {
 
 .playing {
     transform: scale(1.1);
-    border-color: #ffc600;
-    box-shadow: 0 0 1rem #ffc600;
+    border-color: #0099ff;
+    box-shadow: 0 0 1rem #0099ff;
 }
 
 kbd {
@@ -48,5 +48,17 @@ kbd {
     font-size: 1.2rem;
     text-transform: uppercase;
     letter-spacing: .1rem;
-    color: #ffc600;
+    color: #0099ff;
+}
+
+.title {
+    font-size: 70px;
+    color: white;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    margin: auto;
+    padding-top: 50px;
+    font-family: Helvetica;
 }
